@@ -9,5 +9,3 @@ df= pd.read_excel('data\data_dropout_59-64.xlsx',usecols=['COURSE_DEGREE','STUDY
     'เกรดปี3เทอม1', 'เกรดปี3เทอม2', 'เกรดปี3เทอม3',
     'เกรดปี4เทอม1', 'เกรดปี4เทอม2', 'เกรดปี4เทอม3', 
     'GPA_SCHOOL']).dropna() 
-
-print(" Hello World")

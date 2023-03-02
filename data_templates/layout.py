@@ -191,5 +191,3 @@ app.layout = html.Div(
         ])
     ],style={"marginLeft": 275}
 )
-
-print(" Hello World")
