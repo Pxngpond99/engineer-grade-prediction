@@ -111,19 +111,14 @@ app.layout = html.Div(
                 dbc.InputGroupText("EnterGradeTerm11"),
                 dbc.Input(placeholder="EnterGradeTerm11", type="number", min=0.00,max=4.00,step=0.01),
                 ],
-            className="mb-3"),],width=4),
+            className="mb-3"),],width=6),
                  dbc.Col([
                     dbc.InputGroup([
                 dbc.InputGroupText("EnterGradeTerm12"),
                 dbc.Input(placeholder="EnterGradeTerm12", type="number", min=0.00,max=4.00,step=0.01),
                 ],
-            className="mb-3"),],width=4),
-                dbc.Col([
-                    dbc.InputGroup([
-                dbc.InputGroupText("EnterGradeTerm13"),
-                dbc.Input(placeholder="EnterGradeTerm13", type="number", min=0.00,max=4.00,step=0.01),
-                ],
-            className="mb-3"),],width=4),
+            className="mb-3"),],width=6),
+                
                 ]),
             dbc.Row([
                 dbc.Col([
@@ -131,19 +126,14 @@ app.layout = html.Div(
                 dbc.InputGroupText("EnterGradeTerm21"),
                 dbc.Input(placeholder="EnterGradeTerm21", type="number", min=0.00,max=4.00,step=0.01),
                 ],
-            className="mb-3"),],width=4),
+            className="mb-3"),],width=6),
                  dbc.Col([
                     dbc.InputGroup([
                 dbc.InputGroupText("EnterGradeTerm22"),
                 dbc.Input(placeholder="EnterGradeTerm22", type="number", min=0.00,max=4.00,step=0.01),
                 ],
-            className="mb-3"),],width=4),
-                dbc.Col([
-                    dbc.InputGroup([
-                dbc.InputGroupText("EnterGradeTerm23"),
-                dbc.Input(placeholder="EnterGradeTerm23", type="number", min=0.00,max=4.00,step=0.01),
-                ],
-            className="mb-3"),],width=4),
+            className="mb-3"),],width=6),
+                
                 ]),
             dbc.Row([
                 dbc.Col([
@@ -151,19 +141,14 @@ app.layout = html.Div(
                 dbc.InputGroupText("EnterGradeTerm31"),
                 dbc.Input(placeholder="EnterGradeTerm31", type="number", min=0.00,max=4.00,step=0.01),
                 ],
-            className="mb-3"),],width=4),
+            className="mb-3"),],width=6),
                  dbc.Col([
                     dbc.InputGroup([
                 dbc.InputGroupText("EnterGradeTerm32"),
                 dbc.Input(placeholder="EnterGradeTerm32", type="number", min=0.00,max=4.00,step=0.01),
                 ],
-            className="mb-3"),],width=4),
-                dbc.Col([
-                    dbc.InputGroup([
-                dbc.InputGroupText("EnterGradeTerm33"),
-                dbc.Input(placeholder="EnterGradeTerm33", type="number", min=0.00,max=4.00,step=0.01),
-                ],
-            className="mb-3"),],width=4),
+            className="mb-3"),],width=6),
+                
                 ]),
             dbc.Row([
                 dbc.Col([
@@ -171,19 +156,14 @@ app.layout = html.Div(
                 dbc.InputGroupText("EnterGradeTerm41"),
                 dbc.Input(placeholder="EnterGradeTerm41", type="number", min=0.00,max=4.00,step=0.01),
                 ],
-            className="mb-3"),],width=4),
+            className="mb-3"),],width=6),
                  dbc.Col([
                     dbc.InputGroup([
                 dbc.InputGroupText("EnterGradeTerm42"),
                 dbc.Input(placeholder="EnterGradeTerm42", type="number", min=0.00,max=4.00,step=0.01),
                 ],
-            className="mb-3"),],width=4),
-                dbc.Col([
-                    dbc.InputGroup([
-                dbc.InputGroupText("EnterGradeTerm43"),
-                dbc.Input(placeholder="EnterGradeTerm43", type="number", min=0.00,max=4.00,step=0.01),
-                ],
-            className="mb-3"),],width=4),
+            className="mb-3"),],width=6),
+                
                 ]),
             dbc.Row([
                 dbc.Col([
@@ -191,7 +171,7 @@ app.layout = html.Div(
                 dbc.InputGroupText("GPA_School"),
                 dbc.Input(placeholder="GPA_School", type="number", min=0.00,max=4.00,step=0.01),
                 ],
-            className="mb-20"),],width=4),
+            className="mb-20"),],width=6),
             ])
         ])
     ],style={"marginLeft": 275}
