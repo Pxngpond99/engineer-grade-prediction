@@ -113,12 +113,8 @@ app.layout = html.Div(
                 dbc.InputGroupText("EnterGradeTerm12"),
                 dbc.Input(placeholder="EnterGradeTerm12", type="number", min=0.00,max=4.00,step=0.01),
                 ],
-<<<<<<< HEAD
             className="mb-3"),],width=6),
                 
-=======
-            className="mb-3"),],width=4),
->>>>>>> 20d1841df68b5da99f4cf091e3826f476557ce15
                 ]),
             dbc.Row([
                 dbc.Col([
@@ -132,12 +128,8 @@ app.layout = html.Div(
                 dbc.InputGroupText("EnterGradeTerm22"),
                 dbc.Input(placeholder="EnterGradeTerm22", type="number", min=0.00,max=4.00,step=0.01),
                 ],
-<<<<<<< HEAD
             className="mb-3"),],width=6),
                 
-=======
-            className="mb-3"),],width=4),
->>>>>>> 20d1841df68b5da99f4cf091e3826f476557ce15
                 ]),
             dbc.Row([
                 dbc.Col([
@@ -151,12 +143,8 @@ app.layout = html.Div(
                 dbc.InputGroupText("EnterGradeTerm32"),
                 dbc.Input(placeholder="EnterGradeTerm32", type="number", min=0.00,max=4.00,step=0.01),
                 ],
-<<<<<<< HEAD
             className="mb-3"),],width=6),
                 
-=======
-            className="mb-3"),],width=4),
->>>>>>> 20d1841df68b5da99f4cf091e3826f476557ce15
                 ]),
             dbc.Row([
                 dbc.Col([
@@ -170,12 +158,8 @@ app.layout = html.Div(
                 dbc.InputGroupText("EnterGradeTerm42"),
                 dbc.Input(placeholder="EnterGradeTerm42", type="number", min=0.00,max=4.00,step=0.01),
                 ],
-<<<<<<< HEAD
             className="mb-3"),],width=6),
                 
-=======
-            className="mb-3"),],width=4),
->>>>>>> 20d1841df68b5da99f4cf091e3826f476557ce15
                 ]),
             dbc.Row([
                 dbc.Col([
