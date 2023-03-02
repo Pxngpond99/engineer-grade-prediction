@@ -4,7 +4,7 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
 from data import *
-
+from dash import Input, Output, html
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.MINTY])
 
@@ -29,30 +29,35 @@ sidebar = html.Div(
         html.H2("SelectBar", className="display-4"),
         html.Hr(),
         html.P(
-            "Select Course Degree", className="lead"
+            "Select Prediction Target", className="lead"
         ),
-        dbc.DropdownMenu(
-    [
         html.Div([
                 dbc.Select(
-                id="Department",
-                value=df["COURSE_DEGREE"],
-                options=[{"label": s, "value": s} for s in df["COURSE_DEGREE"].unique()], 
+                id="Target",
+                options=[{"label": s, "value": s} for s in ['เกรดปี1เทอม2',
+                    'เกรดปี2เทอม1', 'เกรดปี2เทอม2', 
+                    'เกรดปี3เทอม1', 'เกรดปี3เทอม2', 
+                    'เกรดปี4เทอม1', 'เกรดปี4เทอม2' ]], 
             ),
                     ],style={"top": "20px;",
                              "margin": "5px 5px 5px 5px",
                              },
                     className="col-sm")
         ,
-    ],
-    label="Course Degree",
-    className="m-1",
-    toggle_style={
-        "textTransform": "uppercase",
-        "background": "#FB79B3",
-    },
-    toggleClassName="fst-italic border border-dark",
-)
+        html.P(
+            "Select Course Degree", className="lead"
+        ),
+        html.Div([
+                dbc.Select(
+                id="Department",
+                # value=df["COURSE_DEGREE"],
+                options=[{"label": s, "value": s} for s in df["MAJOR_NAME_THAI"].unique()], 
+            ),
+                    ],style={"top": "20px;",
+                             "margin": "5px 5px 5px 5px",
+                             },
+                    className="col-sm")
+        ,    
     ],
     style=SIDEBAR_STYLE,
 )
@@ -77,7 +82,7 @@ app.layout = html.Div(
         html.Div(
             children=[
                 html.H2(
-                    children="enter your information",
+                    children="Enter your information",
                     style={
                         "textAlign": "center",
                     },
@@ -191,5 +196,3 @@ app.layout = html.Div(
         ])
     ],style={"marginLeft": 275}
 )
-
-print(" Hello World")
