@@ -29,18 +29,14 @@ sidebar = html.Div(
         html.H2("SelectBar", className="display-4"),
         html.Hr(),
         html.P(
-            "Select Prediction Target", className="lead"
+            "Select Your Gender", className="lead"
         ),
         html.Div([
                 dbc.Select(
-                id="Target",
-                options=[{"label": s, "value": s} for s in ['เกรดปี1เทอม2',
-                    'เกรดปี2เทอม1', 'เกรดปี2เทอม2', 
-                    'เกรดปี3เทอม1', 'เกรดปี3เทอม2', 
-                    'เกรดปี4เทอม1', 'เกรดปี4เทอม2' ]], 
-            ),
-                    ],style={"top": "20px;",
-                             "margin": "5px 5px 5px 5px",
+                id="Gender",
+                options=[{"label": s, "value": s} for s in ['เพศชาย','เพศหญิง']], 
+            ), ],style={"top": "20px;",
+                        "margin": "5px 5px 5px 5px",
                              },
                     className="col-sm")
         ,
@@ -118,12 +114,6 @@ app.layout = html.Div(
                 dbc.Input(placeholder="EnterGradeTerm12", type="number", min=0.00,max=4.00,step=0.01),
                 ],
             className="mb-3"),],width=4),
-                dbc.Col([
-                    dbc.InputGroup([
-                dbc.InputGroupText("EnterGradeTerm13"),
-                dbc.Input(placeholder="EnterGradeTerm13", type="number", min=0.00,max=4.00,step=0.01),
-                ],
-            className="mb-3"),],width=4),
                 ]),
             dbc.Row([
                 dbc.Col([
@@ -136,12 +126,6 @@ app.layout = html.Div(
                     dbc.InputGroup([
                 dbc.InputGroupText("EnterGradeTerm22"),
                 dbc.Input(placeholder="EnterGradeTerm22", type="number", min=0.00,max=4.00,step=0.01),
-                ],
-            className="mb-3"),],width=4),
-                dbc.Col([
-                    dbc.InputGroup([
-                dbc.InputGroupText("EnterGradeTerm23"),
-                dbc.Input(placeholder="EnterGradeTerm23", type="number", min=0.00,max=4.00,step=0.01),
                 ],
             className="mb-3"),],width=4),
                 ]),
@@ -158,12 +142,6 @@ app.layout = html.Div(
                 dbc.Input(placeholder="EnterGradeTerm32", type="number", min=0.00,max=4.00,step=0.01),
                 ],
             className="mb-3"),],width=4),
-                dbc.Col([
-                    dbc.InputGroup([
-                dbc.InputGroupText("EnterGradeTerm33"),
-                dbc.Input(placeholder="EnterGradeTerm33", type="number", min=0.00,max=4.00,step=0.01),
-                ],
-            className="mb-3"),],width=4),
                 ]),
             dbc.Row([
                 dbc.Col([
@@ -176,12 +154,6 @@ app.layout = html.Div(
                     dbc.InputGroup([
                 dbc.InputGroupText("EnterGradeTerm42"),
                 dbc.Input(placeholder="EnterGradeTerm42", type="number", min=0.00,max=4.00,step=0.01),
-                ],
-            className="mb-3"),],width=4),
-                dbc.Col([
-                    dbc.InputGroup([
-                dbc.InputGroupText("EnterGradeTerm43"),
-                dbc.Input(placeholder="EnterGradeTerm43", type="number", min=0.00,max=4.00,step=0.01),
                 ],
             className="mb-3"),],width=4),
                 ]),
