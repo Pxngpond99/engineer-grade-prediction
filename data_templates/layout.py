@@ -15,11 +15,13 @@ SIDEBAR_STYLE = {
     "top" : "8rem",
     "bottom": 0,
     "width": "30vw",
-    "padding": "5rem 3rem",
-    "background-color": "#FEE1E8",
+    "padding": "2rem 3rem",
+    "background-image": "linear-gradient(to right, #FEE1E8, #ffcaa3)",
 }
 
 CONTENT_STYLE = {
+    "position": "fixed",
+    "top":0,
     "height" : "8rem",
     "padding": "2rem 0",
     "background-image": "linear-gradient(to bottom right,#FF69B4, #DC143C,#FF4500)",
@@ -42,10 +44,21 @@ money = html.Div(className="fa-regular fa-money-bill-1",style={"margin": "0 5px"
 
 family = html.Div(className="fa-solid fa-heart",style={"margin": "0 5px"})
 
+input_box = {"font-weight": "500","background-image": "linear-gradient(#FFA07A, #ff4000)","color":"#FFFAF0","border-color": "#ff8c66"}
 sidebar = html.Div(
-    [
+    [   html.Div(
+            children=[
+                html.H2(
+                    children="YOUR INFORMATION",
+                    style={
+                        "textAlign": "center","font-weight": "bold",
+                    },
+                )
+            ],
+            className="row",style={ "padding": "1rem 0 1rem 0","width" : "100.7%"}
+        ),
         html.P(children=[sex,"Select Your Gender"]
-            ,className="lead"
+            ,className="lead",style={"font-weight": "500",}
         ),
         html.Div([
                 dbc.Select(
@@ -57,7 +70,7 @@ sidebar = html.Div(
                     className="col-sm")
         ,
         html.P(children=[course,"Select Major"]
-            , className="lead"
+            , className="lead",style={"font-weight": "500",}
         ),
         html.Div([
                 dbc.Select(
@@ -70,7 +83,7 @@ sidebar = html.Div(
                     className="col-sm")
         ,    
         html.P(children=[graduate,"Select Department"]
-            , className="lead"
+            , className="lead",style={"font-weight": "500",}
         ),
         html.Div([
                 dbc.Select(
@@ -83,12 +96,11 @@ sidebar = html.Div(
                     className="col-sm")
         ,    
         html.P(children=[school,"Select School"]
-            , className="lead"
+            , className="lead",style={"font-weight": "500",}
         ),
         html.Div([
                 html.Div([
                 dcc.Dropdown([s for s in PREV_INSTITUTION_NAME if s != ""], ' ', id='school-dropdown'),
-                html.Div(id='school-output-container')
             ]),
                     ],style={"top": "20px;",
                              "margin": "0 0 10px 0",
@@ -96,12 +108,12 @@ sidebar = html.Div(
                     className="col-sm")
         ,    
         html.P(children=[passport,"Select Entertainment Method"]
-            , className="lead"
+            , className="lead",style={"font-weight": "500",}
         ),
         html.Div([
                 html.Div([
                 dcc.Dropdown([s for s in ENT_METHOD_DESC if s != ""], ' ', id='ent-dropdown'),
-                html.Div(id='ent-output-container')
+                
             ]),
                     ],style={"top": "20px;",
                              "margin": "0 0 10px 0",
@@ -109,7 +121,7 @@ sidebar = html.Div(
                     className="col-sm")
                 ,    
         html.P(children=[money,"Select Fundamental"]
-            , className="lead"
+            , className="lead",style={"font-weight": "500",}
         ),
         html.Div([
                 dbc.Select(
@@ -121,8 +133,8 @@ sidebar = html.Div(
                              },
                     className="col-sm")
                 ,    
-        html.P(children=[family,"Select Family Status"]
-            , className="lead"
+        html.P(children=[family,"Select Family Status (Dispensable)"]
+            , className="lead",style={"font-weight": "500",}
         ),
         html.Div([
                 dbc.Select(
@@ -154,87 +166,85 @@ app.layout = html.Div(
         html.Div(
             
         ),
-        html.Div(
-            children=[
-                html.H2(
-                    children="Enter your information",
-                    style={
-                        "textAlign": "center",
-                    },
-                )
-            ],
-            className="row",style={ "padding": "1rem 0 4rem 0","width" : "100.7%"}
-        ),
+    
         dbc.Container([
             dbc.Row([
                 dbc.Col([
                     dbc.InputGroup([
-                dbc.InputGroupText("Grade Year 1 Term 1"),
+                dbc.InputGroupText("Grade Year 1 Term 1",style=input_box),
                 dbc.Input(id="EnterGradeTerm11",placeholder="EnterGradeTerm 1 1", type="number", min=0.00,max=4.00,step=0.01),
                 ],
             className="mb-3"),],width=5,style={"margin-right": "5vh"}),
                  dbc.Col([
                     dbc.InputGroup([
-                dbc.InputGroupText("Grade Year 1 Term 2"),
+                dbc.InputGroupText("Grade Year 1 Term 2",style=input_box),
                 dbc.Input(id="EnterGradeTerm12",placeholder="EnterGradeTerm 1 2", type="number", min=0.00,max=4.00,step=0.01),
                 ],
             className="mb-3"),],width=5),
                 
-                ],style={"margin": "0 5vh 5vh 5vh"}),
+                ],style={"margin": "0 0 0 7vh"}),
             dbc.Row([
                 dbc.Col([
                     dbc.InputGroup([
-                dbc.InputGroupText("Grade Year 2 Term 1"),
+                dbc.InputGroupText("Grade Year 2 Term 1",style=input_box),
                 dbc.Input(id="EnterGradeTerm21",placeholder="EnterGradeTerm 2 1", type="number", min=0.00,max=4.00,step=0.01),
                 ],
             className="mb-3"),],width=5,style={"margin-right": "5vh"}),
                  dbc.Col([
                     dbc.InputGroup([
-                dbc.InputGroupText("Grade Year 2 Term 2"),
+                dbc.InputGroupText("Grade Year 2 Term 2",style=input_box),
                 dbc.Input(id="EnterGradeTerm22",placeholder="EnterGradeTerm 2 2", type="number", min=0.00,max=4.00,step=0.01),
                 ],
             className="mb-3"),],width=5),
                 
-                ],style={"margin": "5vh"}),
+                ],style={"margin": "0 0 0 7vh"}),
             dbc.Row([
                 dbc.Col([
                     dbc.InputGroup([
-                dbc.InputGroupText("Grade Year 3 Term 1"),
+                dbc.InputGroupText("Grade Year 3 Term 1",style=input_box),
                 dbc.Input(id="EnterGradeTerm31",placeholder="EnterGradeTerm 3 1", type="number", min=0.00,max=4.00,step=0.01),
                 ],
             className="mb-3"),],width=5,style={"margin-right": "5vh"}),
                  dbc.Col([
                     dbc.InputGroup([
-                dbc.InputGroupText("Grade Year 3 Term 2"),
+                dbc.InputGroupText("Grade Year 3 Term 2",style=input_box),
                 dbc.Input(id="EnterGradeTerm32",placeholder="EnterGradeTerm 3 2", type="number", min=0.00,max=4.00,step=0.01),
                 ],
             className="mb-3"),],width=5),
                 
-                ],style={"margin": "5vh"}),
+                ],style={"margin": "0 0 0 7vh"}),
             dbc.Row([
                 dbc.Col([
                     dbc.InputGroup([
-                dbc.InputGroupText("Grade Year 4 Term 1"),
+                dbc.InputGroupText("Grade Year 4 Term 1",style=input_box),
                 dbc.Input(id="EnterGradeTerm41",placeholder="EnterGradeTerm 4 1", type="number", min=0.00,max=4.00,step=0.01),
                 ],
             className="mb-3"),],width=5,style={"margin-right": "5vh"}),
                  dbc.Col([
                     dbc.InputGroup([
-                dbc.InputGroupText("Grade Year 4 Term 2"),
+                dbc.InputGroupText("Grade Year 4 Term 2",style=input_box),
                 dbc.Input(id="EnterGradeTerm42",placeholder="EnterGradeTerm 4 2", type="number", min=0.00,max=4.00,step=0.01),
                 ],
             className="mb-3"),],width=5),
                 
-                ],style={"margin": "5vh"}),
+                ],style={"margin": "0 0 0 7vh"}),
             dbc.Row([
                 dbc.Col([
                     dbc.InputGroup([
-                dbc.InputGroupText("GPA From Old School"),
+                dbc.InputGroupText("GPA From Old School",style=input_box),
                 dbc.Input(id="GPA_School",placeholder="GPA School", type="number", min=0.00,max=4.00,step=0.01),
                 ],
             className="mb-3"),],width=5,style={"margin-right": "5vh"}),
-                dbc.Button("SUNMIT TO PREDICT", id="input-button", n_clicks=0)
-            ],style={"margin": "5vh"})
-        ],style={"marginLeft": "30vw" , "padding": "0 2rem","right": 0, "width" : "69vw",})
-    ],style={"background-color": "#ff9999","height":"98vh"}
+                html.Button("SUMMIT TO PREDICT", id="input-button", n_clicks=0,
+                            style={"width":"25vw","height":"4vh","margin-left":"0.5vw","background-image": "linear-gradient(to bottom right,#FF69B4, #DC143C,#FF4500)",
+                                   "font-weight": "bold","color" : "#F0F8FF","border-color": "#ff8c66"})
+                ],style={"margin": "0 0 0 7vh"}),
+            dbc.Row([
+                html.Div(id='ent-output-container',style={"text-align":"center"}),
+                html.Div(id='show',style={"text-align":"center","pading":"5px"}),
+                html.Div( [dcc.Graph(id="graph"),], className="col-10",style={'margin-left':"5vw"}),              
+                ],style={"margin": "0 5vh"}),
+        ],style={"marginLeft": "30vw" , "padding": "16vh 2rem 0 2rem","right": 0, "width" : "69vw" ,"height" : "100vh",}),
+        
+    ],style={"background-color": "#ff9999",}
 )
