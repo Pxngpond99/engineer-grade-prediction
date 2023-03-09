@@ -255,7 +255,7 @@ app.layout = html.Div(
                 dbc.Input(id="GPA_School",placeholder="GPA School", type="number", min=0.00,max=4.00,step=0.01),
                 ],
             className="mb-3"),],width=5,style={"margin-right": "5vh"}),
-                html.Button("SUMMIT TO PREDICT", id="input-button", n_clicks=0,
+                html.Button("SUBMIT TO PREDICT", id="input-button", n_clicks=0,
                             style={"width":"25vw","height":"4vh","margin-left":"0.5vw","background-image": "linear-gradient(to bottom right,#FF69B4, #DC143C,#FF4500)",
                                    "font-weight": "bold","color" : "#F0F8FF","border-color": "#ff8c66"})
                 ],style={"margin": "0 0 0 7vh"}),
