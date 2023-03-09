@@ -5,7 +5,7 @@ from pycaret.classification import *
 import plotly.express as px
 import random 
 
-model = load_model("engipremo2")
+model = load_model("engipremo")
 
 @app.callback(
     Output('ent-output-container', 'children'),
@@ -95,10 +95,9 @@ def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t
      Input('EnterGradeTerm41', 'value'),
      Input('EnterGradeTerm42', 'value'),
      Input('GPA_School', 'value'),
-     Input("input1","value")
      ]
 )
-def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t41,t42,gpa,nam):
+def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t41,t42,gpa):
     text = "Your Prediction Will Show Here"
     text_style = {"font-weight": "bold","color":"#000000","font-size": "1em"}
     if 'input-button' == ctx.triggered_id :
@@ -133,10 +132,10 @@ def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t
             per = "{:.2f}%".format(score[0]*100)
             if predic[0] == "ตกออก (พ้นสภาพการเป็นนักศึกษา)":
                 text_style = {"font-weight": "bold","color":"#ff0000","font-size": "1em"}
-                text = nam+" คุณมีโอกาส"+"ตกออก "+per
+                text = " คุณมีโอกาส"+"ตกออก "+per
             else :
                 text_style = {"font-weight": "bold","color":"#00ff00","font-size": "1em"}
-                text = nam+" คุณมีโอกาส"+"สำเร็จการศึกษา "+per
+                text = " คุณมีโอกาส"+"สำเร็จการศึกษา "+per
     return html.Div(text,style=text_style)
 
 @app.callback(
