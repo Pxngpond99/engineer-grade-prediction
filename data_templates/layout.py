@@ -173,6 +173,14 @@ content = html.Div(children=[
                                         style={"margin":"0 0.5vw 0 1vw","width":"20vw","textAlign": "left","top":"5vh","float":"right"}),
                     ],style={"font-weight": "500","top":"-3.5rem","position":"relative","float":"right","textAlign": "right","color":"#FFFFF0"}
                 ),
+                html.Div(
+                    children=["ACCURACY OF MACHINE LEARNING : 88.21%"
+                    ],style={"font-weight": "500","top":"-7.5rem","position":"relative","float":"left","textAlign": "left","color":"#FFFFF0","margin-left":"2vw"}
+                ),
+                html.Div(
+                    children=["NAME OF MACHINE LEARNING : Extar Trees Classifier"
+                    ],style={"font-weight": "500","top":"-7.5rem","position":"relative","float":"left","textAlign": "left","color":"#FFFFF0","margin-left":"2vw"}
+                ),
             ],
             className="row",id="page-content", style=CONTENT_STYLE)
 
