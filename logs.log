@@ -6138,3 +6138,169 @@
 'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
 2023-03-09 18:16:57,071:INFO:Initializing load_model()
 2023-03-09 18:16:57,071:INFO:load_model(model_name=engipremo2, platform=None, authentication=None, verbose=True)
+2023-03-09 18:28:30,899:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-03-09 18:28:30,899:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-03-09 18:28:30,899:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-03-09 18:28:30,899:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-03-09 18:28:31,284:WARNING:
+'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
+2023-03-09 18:28:31,810:INFO:Initializing load_model()
+2023-03-09 18:28:31,810:INFO:load_model(model_name=engipremo2, platform=None, authentication=None, verbose=True)
+2023-03-09 18:28:35,225:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-03-09 18:28:35,225:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-03-09 18:28:35,225:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-03-09 18:28:35,226:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-03-09 18:28:35,567:WARNING:
+'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
+2023-03-09 18:28:35,997:INFO:Initializing load_model()
+2023-03-09 18:28:35,997:INFO:load_model(model_name=engipremo2, platform=None, authentication=None, verbose=True)
+2023-03-09 18:55:23,156:INFO:Initializing predict_model()
+2023-03-09 18:55:23,164:INFO:Initializing predict_model()
+2023-03-09 18:55:23,215:INFO:Checking exceptions
+2023-03-09 18:55:23,226:INFO:Checking exceptions
+2023-03-09 18:55:23,226:INFO:Preloading libraries
+2023-03-09 18:55:23,227:INFO:Preloading libraries
+2023-03-09 18:55:23,227:INFO:Set up data.
+2023-03-09 18:55:23,227:INFO:Set up data.
+2023-03-09 18:55:23,236:INFO:Set up index.
+2023-03-09 18:55:23,250:INFO:Set up index.
+2023-03-09 18:55:35,517:INFO:Initializing predict_model()
+2023-03-09 18:55:35,547:INFO:Initializing predict_model()
+2023-03-09 18:55:35,610:INFO:Checking exceptions
+2023-03-09 18:55:35,610:INFO:Preloading libraries
+2023-03-09 18:55:35,619:INFO:Checking exceptions
+2023-03-09 18:55:35,620:INFO:Set up data.
+2023-03-09 18:55:35,620:INFO:Preloading libraries
+2023-03-09 18:55:35,626:INFO:Set up data.
+2023-03-09 18:55:35,635:INFO:Set up index.
+2023-03-09 18:55:35,646:INFO:Set up index.
+2023-03-09 18:55:47,660:INFO:Initializing predict_model()
+2023-03-09 18:55:47,690:INFO:Initializing predict_model()
+2023-03-09 18:55:47,767:INFO:Checking exceptions
+2023-03-09 18:55:47,767:INFO:Preloading libraries
+2023-03-09 18:55:47,776:INFO:Checking exceptions
+2023-03-09 18:55:47,777:INFO:Preloading libraries
+2023-03-09 18:55:47,777:INFO:Set up data.
+2023-03-09 18:55:47,777:INFO:Set up data.
+2023-03-09 18:55:47,790:INFO:Set up index.
+2023-03-09 18:55:47,796:INFO:Set up index.
+2023-03-09 18:55:56,302:INFO:Initializing predict_model()
+2023-03-09 18:55:56,330:INFO:Initializing predict_model()
+2023-03-09 18:55:56,392:INFO:Checking exceptions
+2023-03-09 18:55:56,393:INFO:Preloading libraries
+2023-03-09 18:55:56,403:INFO:Checking exceptions
+2023-03-09 18:55:56,404:INFO:Set up data.
+2023-03-09 18:55:56,404:INFO:Preloading libraries
+2023-03-09 18:55:56,405:INFO:Set up data.
+2023-03-09 18:55:56,419:INFO:Set up index.
+2023-03-09 18:55:56,431:INFO:Set up index.
+2023-03-09 18:56:02,486:INFO:Initializing predict_model()
+2023-03-09 18:56:02,513:INFO:Initializing predict_model()
+2023-03-09 18:56:02,577:INFO:Checking exceptions
+2023-03-09 18:56:02,588:INFO:Checking exceptions
+2023-03-09 18:56:02,589:INFO:Preloading libraries
+2023-03-09 18:56:02,589:INFO:Preloading libraries
+2023-03-09 18:56:02,589:INFO:Set up data.
+2023-03-09 18:56:02,590:INFO:Set up data.
+2023-03-09 18:56:02,600:INFO:Set up index.
+2023-03-09 18:56:02,607:INFO:Set up index.
+2023-03-09 18:56:35,580:INFO:Initializing predict_model()
+2023-03-09 18:56:35,607:INFO:Initializing predict_model()
+2023-03-09 18:56:35,675:INFO:Checking exceptions
+2023-03-09 18:56:35,676:INFO:Preloading libraries
+2023-03-09 18:56:35,690:INFO:Checking exceptions
+2023-03-09 18:56:35,691:INFO:Set up data.
+2023-03-09 18:56:35,692:INFO:Preloading libraries
+2023-03-09 18:56:35,706:INFO:Set up index.
+2023-03-09 18:56:35,706:INFO:Set up data.
+2023-03-09 18:56:35,734:INFO:Set up index.
+2023-03-09 18:56:54,744:INFO:Initializing predict_model()
+2023-03-09 18:56:54,767:INFO:Initializing predict_model()
+2023-03-09 18:56:54,831:INFO:Checking exceptions
+2023-03-09 18:56:54,833:INFO:Preloading libraries
+2023-03-09 18:56:54,844:INFO:Checking exceptions
+2023-03-09 18:56:54,845:INFO:Set up data.
+2023-03-09 18:56:54,845:INFO:Preloading libraries
+2023-03-09 18:56:54,853:INFO:Set up index.
+2023-03-09 18:56:54,853:INFO:Set up data.
+2023-03-09 18:56:54,876:INFO:Set up index.
+2023-03-09 18:56:57,736:INFO:Initializing predict_model()
+2023-03-09 18:56:57,762:INFO:Initializing predict_model()
+2023-03-09 18:56:57,839:INFO:Checking exceptions
+2023-03-09 18:56:57,839:INFO:Preloading libraries
+2023-03-09 18:56:57,849:INFO:Checking exceptions
+2023-03-09 18:56:57,849:INFO:Set up data.
+2023-03-09 18:56:57,849:INFO:Preloading libraries
+2023-03-09 18:56:57,859:INFO:Set up index.
+2023-03-09 18:56:57,859:INFO:Set up data.
+2023-03-09 18:56:57,895:INFO:Set up index.
+2023-03-09 18:57:03,900:INFO:Initializing predict_model()
+2023-03-09 18:57:03,925:INFO:Initializing predict_model()
+2023-03-09 18:57:03,988:INFO:Checking exceptions
+2023-03-09 18:57:03,990:INFO:Preloading libraries
+2023-03-09 18:57:03,999:INFO:Checking exceptions
+2023-03-09 18:57:04,000:INFO:Set up data.
+2023-03-09 18:57:04,000:INFO:Preloading libraries
+2023-03-09 18:57:04,007:INFO:Set up index.
+2023-03-09 18:57:04,008:INFO:Set up data.
+2023-03-09 18:57:04,031:INFO:Set up index.
+2023-03-09 18:58:09,472:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-03-09 18:58:09,472:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-03-09 18:58:09,472:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-03-09 18:58:09,472:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-03-09 18:58:10,000:WARNING:
+'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
+2023-03-09 18:58:10,663:INFO:Initializing load_model()
+2023-03-09 18:58:10,663:INFO:load_model(model_name=engipremo, platform=None, authentication=None, verbose=True)
+2023-03-09 18:58:33,397:INFO:Initializing predict_model()
+2023-03-09 18:58:33,416:INFO:Initializing predict_model()
+2023-03-09 18:58:33,508:INFO:Checking exceptions
+2023-03-09 18:58:33,509:INFO:Preloading libraries
+2023-03-09 18:58:33,521:INFO:Checking exceptions
+2023-03-09 18:58:33,521:INFO:Set up data.
+2023-03-09 18:58:33,522:INFO:Preloading libraries
+2023-03-09 18:58:33,529:INFO:Set up data.
+2023-03-09 18:58:33,538:INFO:Set up index.
+2023-03-09 18:58:33,542:INFO:Set up index.
+2023-03-09 18:58:36,884:INFO:Initializing predict_model()
+2023-03-09 18:58:36,944:INFO:Initializing predict_model()
+2023-03-09 18:58:37,035:INFO:Checking exceptions
+2023-03-09 18:58:37,036:INFO:Preloading libraries
+2023-03-09 18:58:37,046:INFO:Checking exceptions
+2023-03-09 18:58:37,047:INFO:Set up data.
+2023-03-09 18:58:37,047:INFO:Preloading libraries
+2023-03-09 18:58:37,055:INFO:Set up data.
+2023-03-09 18:58:37,061:INFO:Set up index.
+2023-03-09 18:58:37,079:INFO:Set up index.
+2023-03-09 18:58:43,016:INFO:Initializing predict_model()
+2023-03-09 18:58:43,083:INFO:Initializing predict_model()
+2023-03-09 18:58:43,162:INFO:Checking exceptions
+2023-03-09 18:58:43,162:INFO:Preloading libraries
+2023-03-09 18:58:43,172:INFO:Checking exceptions
+2023-03-09 18:58:43,172:INFO:Set up data.
+2023-03-09 18:58:43,173:INFO:Preloading libraries
+2023-03-09 18:58:43,179:INFO:Set up data.
+2023-03-09 18:58:43,198:INFO:Set up index.
+2023-03-09 18:58:43,205:INFO:Set up index.
+2023-03-09 18:58:53,084:INFO:Initializing predict_model()
+2023-03-09 18:58:53,132:INFO:Initializing predict_model()
+2023-03-09 18:58:53,253:INFO:Checking exceptions
+2023-03-09 18:58:53,254:INFO:Preloading libraries
+2023-03-09 18:58:53,262:INFO:Checking exceptions
+2023-03-09 18:58:53,263:INFO:Set up data.
+2023-03-09 18:58:53,263:INFO:Preloading libraries
+2023-03-09 18:58:53,273:INFO:Set up index.
+2023-03-09 18:58:53,273:INFO:Set up data.
+2023-03-09 18:58:53,305:INFO:Set up index.
