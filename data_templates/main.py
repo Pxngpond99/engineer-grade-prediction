@@ -169,8 +169,8 @@ def update_output(n_clicks,maj,dep):
         df1 = df1[df1["เกรดปี4เทอม1"] > 1.25]
         df1 = df1[df1["เกรดปี4เทอม2"] > 1.25]
         fig = px.strip(df1,  y=['เกรดปี1เทอม1',	'เกรดปี1เทอม2'	,'เกรดปี2เทอม1'	,'เกรดปี2เทอม2'	,'เกรดปี3เทอม1',	'เกรดปี3เทอม2',	'เกรดปี4เทอม1',	'เกรดปี4เทอม2'],template='ggplot2',
-                       title="ตัวอย่างเกรดของนักศึกษาที่สำเร็จการศึกษา {} {}".format(maj,dep))
-        fig_year = px.bar(year_new,y="counts",x="ADMIT_YEAR",template='ggplot2',title="กราฟแสดงตัวอย่างการตกออกและสำเร็จการศึกษา",color="STATUS_DESC_THAI")
+                       title="กราฟแสดงตัวอย่างเกรดของนักศึกษาที่สำเร็จการศึกษาของ {} {}".format(maj,dep))
+        fig_year = px.bar(year_new,y="counts",x="ADMIT_YEAR",template='ggplot2',title="กราฟแสดงตัวอย่างการตกออกและสำเร็จการศึกษาของ {} {}".format(maj,dep),color="STATUS_DESC_THAI")
     return fig,fig_year
 
 
