@@ -140,6 +140,7 @@ def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t
 
 @app.callback(
     Output('graph', 'figure'),
+    Output('graph-past', 'figure'),
     [Input('input-button','n_clicks'),
      Input('Major-dd', 'value'),
      Input('Department-dd', 'value'),
@@ -147,6 +148,13 @@ def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t
 )
 def update_output(n_clicks,maj,dep):
     fig = px.strip(None,y=None,template='ggplot2',title="กราฟแสดงตัวอย่างเกรดจะปรากฏที่นี่")
+    fig_year = px.bar(None,y=None,template='ggplot2',title="กราฟแสดงตัวอย่างการตกออกและสำเร็จจะปรากฏที่นี่")
+    year = df[df["MAJOR_NAME_THAI"]==maj]
+    year = year.loc[year["STATUS_DESC_THAI"] !="เสียชีวิต (พ้นสภาพการเป็นนักศึกษา)"]
+    year = year.loc[year["STATUS_DESC_THAI"] !="ลาพักการศึกษา"]
+    year = year.loc[year["STATUS_DESC_THAI"] !="ลาออก (พ้นสภาพการเป็นนักศึกษา)"]
+    year = year.loc[year["STATUS_DESC_THAI"] !="กำลังศึกษา"]
+    year_new = year.groupby(['STATUS_DESC_THAI',"ADMIT_YEAR"]).size().reset_index(name='counts')
     if 'input-button' == ctx.triggered_id :
         df1 = df
         df1 = df1[df1["STATUS_DESC_THAI"] == "สำเร็จการศึกษา (พ้นสภาพการเป็นนักศึกษา)"]
@@ -162,7 +170,8 @@ def update_output(n_clicks,maj,dep):
         df1 = df1[df1["เกรดปี4เทอม2"] > 1.25]
         fig = px.strip(df1,  y=['เกรดปี1เทอม1',	'เกรดปี1เทอม2'	,'เกรดปี2เทอม1'	,'เกรดปี2เทอม2'	,'เกรดปี3เทอม1',	'เกรดปี3เทอม2',	'เกรดปี4เทอม1',	'เกรดปี4เทอม2'],template='ggplot2',
                        title="ตัวอย่างเกรดของนักศึกษาที่สำเร็จการศึกษา {} {}".format(maj,dep))
-    return fig
+        fig_year = px.bar(year_new,y="counts",x="ADMIT_YEAR",template='ggplot2',title="กราฟแสดงตัวอย่างการตกออกและสำเร็จการศึกษา",color="STATUS_DESC_THAI")
+    return fig,fig_year
 
 
 @app.callback(
