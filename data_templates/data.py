@@ -5,7 +5,13 @@ import plotly.graph_objects as go
 
 data = 'data_analize/data_dropout_59-64.xlsx'
 df = pd.read_excel(data)
+past = ["https://drive.google.com/uc?export=download&id=17qsPP86rlPAptVM_oexepH9mcmTXtJ3U",
+        "https://drive.google.com/uc?export=download&id=1kXThMKySTKWps6pRA3WKohGo_0JoLxAz",
+        "https://drive.google.com/uc?export=download&id=1ICmuWaVmZROnShNgYpK0D8TrYond-LfU"]
 
+fail = ["https://drive.google.com/uc?export=download&id=1JNASf5eFIQ-lQ6SIgnhd84ZbA8qDko6f",
+        "https://drive.google.com/uc?export=download&id=1JVWdtIwlHhzza7IL8CXmiXYP97gbB38Z",
+        "https://drive.google.com/file/d/1yHYtwUbbC1q1wrPFRMAe7hlfjsrZZrtN/view?usp=sharing"]
 MAJOR_NAME_THAI = ['วิศวกรรมไฟฟ้า', 'วิศวกรรมเครื่องกล', 'วิศวกรรมเหมืองแร่',
        'วิศวกรรมโยธา', 'วิศวกรรมเคมี', 'วิศวกรรมเมคาทรอนิกส์',
        'วิศวกรรมวัสดุ', 'ยังไม่แยกสาขาวิชา', 'วิศวกรรมคอมพิวเตอร์',
