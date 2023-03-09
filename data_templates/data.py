@@ -3,7 +3,7 @@ import plotly.express as px
 import numpy as np
 import plotly.graph_objects as go
 
-data = 'data_analize/data_dropout_59-64.xlsx'
+data = 'data_analize/data_dropout_59-64-new.xlsx'
 df = pd.read_excel(data)
 past = ["https://drive.google.com/uc?export=download&id=17qsPP86rlPAptVM_oexepH9mcmTXtJ3U",
         "https://drive.google.com/uc?export=download&id=1kXThMKySTKWps6pRA3WKohGo_0JoLxAz",

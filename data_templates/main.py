@@ -5,7 +5,7 @@ from pycaret.classification import *
 import plotly.express as px
 import random 
 
-model = load_model("engipremo")
+model = load_model("engipremo2")
 
 @app.callback(
     Output('ent-output-container', 'children'),
