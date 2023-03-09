@@ -1,13 +1,15 @@
 from layout import *
-from dash import Input, Output,ctx,html
+from dash import Input, Output,ctx,html,State
 import pandas as pd
 from pycaret.classification import *
 import plotly.express as px
+import random 
 
 model = load_model("engipremo2")
 
 @app.callback(
     Output('ent-output-container', 'children'),
+    Output("image-show","children"),
     [Input('input-button','n_clicks'),
      Input('Gender-dd', 'value'),
      Input('Major-dd', 'value'),
@@ -30,6 +32,11 @@ model = load_model("engipremo2")
 def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t41,t42,gpa):
     text = "Please Enter Your Information"
     text_style = {"font-weight": "bold","color":"#000000","font-size": "2.5em"}
+    ran = random.randrange(0,3)
+    show_img = [html.Img(src="https://drive.google.com/uc?export=download&id=1I3BlgKcpxEZUQRXBCa4h_jmGGOgywT1w", alt='image',
+                         style={"display": "block","margin-left": "auto","margin-right": "auto",
+                                "width":"33.5vw","height":"auto"}),
+                html.Div("HMM? Please Check Your Information"),]
     if 'input-button' == ctx.triggered_id :
         if gen not in ['เพศชาย','เพศหญิง']:
             text =  "Please Select Your Gender"
@@ -61,10 +68,12 @@ def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t
             if predic[0] == "ตกออก (พ้นสภาพการเป็นนักศึกษา)":
                 text_style = {"font-weight": "bold","color":"#ff0000","font-size": "2.5em"}
                 text = "OH NO, BE CAREFUL!"
+                show_img = [html.Img(src=fail[ran], alt='image',style={"display": "block","margin-left": "auto","margin-right": "auto","width":"33.5vw","height":"auto"}),html.Div(text),]
             else :
                 text_style = {"font-weight": "bold","color":"#00ff00","font-size": "2.5em"}
                 text = "CONGRATULATIONS!"
-    return html.Div(text,style=text_style)
+                show_img = [html.Img(src=past[ran], alt='image',style={"display": "block","margin-left": "auto","margin-right": "auto","width":"33.5vw","height":"auto"}),html.Div(text),]
+    return html.Div(text,style=text_style),show_img
 
 
 @app.callback(
@@ -86,9 +95,10 @@ def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t
      Input('EnterGradeTerm41', 'value'),
      Input('EnterGradeTerm42', 'value'),
      Input('GPA_School', 'value'),
+     Input("input1","value")
      ]
 )
-def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t41,t42,gpa):
+def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t41,t42,gpa,nam):
     text = "Your Prediction Will Show Here"
     text_style = {"font-weight": "bold","color":"#000000","font-size": "1em"}
     if 'input-button' == ctx.triggered_id :
@@ -123,10 +133,10 @@ def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t
             per = "{:.2f}%".format(score[0]*100)
             if predic[0] == "ตกออก (พ้นสภาพการเป็นนักศึกษา)":
                 text_style = {"font-weight": "bold","color":"#ff0000","font-size": "1em"}
-                text = "คุณมีโอกาส"+"ตกออก "+per
+                text = nam+" คุณมีโอกาส"+"ตกออก "+per
             else :
                 text_style = {"font-weight": "bold","color":"#00ff00","font-size": "1em"}
-                text = "คุณมีโอกาส"+"สำเร็จการศึกษา "+per
+                text = nam+" คุณมีโอกาส"+"สำเร็จการศึกษา "+per
     return html.Div(text,style=text_style)
 
 @app.callback(
@@ -137,7 +147,7 @@ def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t
      ]
 )
 def update_output(n_clicks,maj,dep):
-    fig = px.strip(None,y=None,template='ggplot2')
+    fig = px.strip(None,y=None,template='ggplot2',title="กราฟแสดงตัวอย่างเกรดจะปรากฏที่นี่")
     if 'input-button' == ctx.triggered_id :
         df1 = df
         df1 = df1[df1["STATUS_DESC_THAI"] == "สำเร็จการศึกษา (พ้นสภาพการเป็นนักศึกษา)"]
@@ -154,6 +164,27 @@ def update_output(n_clicks,maj,dep):
         fig = px.strip(df1,  y=['เกรดปี1เทอม1',	'เกรดปี1เทอม2'	,'เกรดปี2เทอม1'	,'เกรดปี2เทอม2'	,'เกรดปี3เทอม1',	'เกรดปี3เทอม2',	'เกรดปี4เทอม1',	'เกรดปี4เทอม2'],template='ggplot2',
                        title="ตัวอย่างเกรดของนักศึกษาที่สำเร็จการศึกษา {} {}".format(maj,dep))
     return fig
+
+
+@app.callback(
+    Output('Major-dd', 'options'),
+    Input('Department-dd', 'value'),
+)
+def update_output(dep):
+    new_major = df[df["DEPT_NAME_THAI"] == dep]
+    new_list = [s for s in new_major["MAJOR_NAME_THAI"].unique() if s != ""]
+    return new_list 
+
+
+@app.callback(
+    Output("modal-centered", "is_open"),
+    Input('input-button', "n_clicks"),
+    [State("modal-centered", "is_open")],
+)
+def toggle_modal(n1, is_open):
+    if n1:
+        return not is_open
+    return is_open
 
 
 if __name__ == "__main__":
