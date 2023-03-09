@@ -173,11 +173,11 @@ content = html.Div(children=[
                     ],style={"font-weight": "500","top":"-3.5rem","position":"relative","float":"right","textAlign": "right","color":"#FFFFF0"}
                 ),
                 html.Div(
-                    children=["ACCURACY OF MACHINE LEARNING : 88.21%"
+                    children=["ACCURACY OF MACHINE LEARNING : 90.36%"
                     ],style={"font-weight": "500","top":"-7.5rem","position":"relative","float":"left","textAlign": "left","color":"#FFFFF0","margin-left":"2vw"}
                 ),
                 html.Div(
-                    children=["NAME OF MACHINE LEARNING : Extar Trees Classifier"
+                    children=["NAME OF MACHINE LEARNING : Logistic Regression"
                     ],style={"font-weight": "500","top":"-7.5rem","position":"relative","float":"left","textAlign": "left","color":"#FFFFF0","margin-left":"2vw"}
                 ),
             ],
