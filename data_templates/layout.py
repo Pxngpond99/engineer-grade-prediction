@@ -27,9 +27,9 @@ SIDEBAR_STYLE = {
     "top" : "8rem",
     "width": "30%",
     "padding": "2rem 3rem 0 3rem",
-    "background-image": "linear-gradient(to right, #FEE1E8, #ffcaa3)",
+    "background-image": "linear-gradient(to bottom, #FEE1E8, #ffcaa3,#ff9999)",
     "float":"left",
-    "height": "129vh",
+    "height": "135vh",
 }
 
 CONTENT_STYLE = {
@@ -77,7 +77,7 @@ sidebar = html.Div(
                 id="Gender-dd",
                 options=[{"label": s, "value": s} for s in ['เพศชาย','เพศหญิง']], 
             ), ],style={"top": "20px;",
-                        "margin": "0 0 10px 0",
+                        "margin": "0 0 4vh 0",
                              },
                     className="col-sm")
         ,
@@ -89,7 +89,7 @@ sidebar = html.Div(
                 dcc.Dropdown([s for s in DEPT_NAME_THAI if s != ""], 'ภาควิชาวิศวกรรมไฟฟ้า', id='Department-dd'),], 
             ),
                     ],style={"top": "20px;",
-                             "margin": "0 0 10px 0",
+                             "margin": "0 0 4vh 0",
                              },
                     className="col-sm")
         ,    
@@ -97,7 +97,7 @@ sidebar = html.Div(
             , className="lead",style={"font-weight": "500",}
         ),
         html.Div([dcc.Dropdown( id="Major-dd"),],style={"top": "20px;",
-                             "margin": "0 0 10px 0",
+                             "margin": "0 0 4vh 0",
                              },
                     className="col-sm")
         ,    
@@ -109,7 +109,7 @@ sidebar = html.Div(
                 dcc.Dropdown([s for s in PREV_INSTITUTION_NAME if s != ""], ' ', id='school-dropdown'),
             ]),
                     ],style={"top": "20px;",
-                             "margin": "0 0 10px 0",
+                             "margin": "0 0 4vh 0",
                              },
                     className="col-sm")
         ,    
@@ -122,7 +122,7 @@ sidebar = html.Div(
                 
             ]),
                     ],style={"top": "20px;",
-                             "margin": "0 0 10px 0","text-overflow": "ellipsis"
+                             "margin": "0 0 4vh 0","text-overflow": "ellipsis"
                              },
                     className="col-sm")
                 ,    
@@ -135,7 +135,7 @@ sidebar = html.Div(
                 options=[{"label": s, "value": s} for s in FUND_NAME_CODE  if s != ""], 
             ),
                     ],style={"top": "20px;",
-                             "margin": "0 0 10px 0",
+                             "margin": "0 0 4vh 0",
                              },
                     className="col-sm")
                 ,    
@@ -148,7 +148,7 @@ sidebar = html.Div(
                 options=[{"label": s, "value": s} for s in PARENTS_MARRIED_NAME  if s != ""], 
             ),
                     ],style={"top": "20px;",
-                             "margin": "5px 0 10px 0",
+                             "margin": "5px 0 4vh 0",
                              },
                     className="col-sm")
     ],
@@ -262,7 +262,8 @@ app.layout = html.Div(
             dbc.Row([
                 html.Div(id='ent-output-container',style={"text-align":"center"}),
                 html.Div(id='show',style={"text-align":"center","pading":"5px"}),
-                html.Div( [dcc.Graph(id="graph"),], className="col-10",style={'margin-left':"5vw"}),modal              
+                html.Div( [dcc.Graph(id="graph"),], className="col-10",style={'margin-left':"5vw","margin-bottom":"5px"}),
+                html.Div( [dcc.Graph(id="graph-past"),], className="col-10",style={'margin-left':"5vw"}),modal              
                 ],style={"margin": "0 5vh"}),
         ],style={"left": "30%" , "padding": "5vh 2rem 0 2rem","right": 0, "width" : "69vw" ,"height" : "100vh","float":"right","height":"auto"}),
         
