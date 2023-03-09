@@ -24,16 +24,15 @@ modal = html.Div(
     ],style={"width":"33.5vw"}
 )
 SIDEBAR_STYLE = {
-    "position": "fixed",
     "top" : "8rem",
-    "bottom": 0,
-    "width": "30vw",
-    "padding": "2rem 3rem",
+    "width": "30%",
+    "padding": "2rem 3rem 0 3rem",
     "background-image": "linear-gradient(to right, #FEE1E8, #ffcaa3)",
+    "float":"left",
+    "height": "129vh",
 }
 
 CONTENT_STYLE = {
-    "position": "fixed",
     "top":0,
     "height" : "8rem",
     "padding": "2rem 0",
@@ -187,11 +186,7 @@ content = html.Div(children=[
 
 app.layout = html.Div( 
     children=[
-        html.Div([dcc.Location(id="url"), sidebar, content]),
-        html.Div(
-            
-        ),
-    
+        html.Div([dcc.Location(id="url"),content ,sidebar, ]),
         dbc.Container([
             dbc.Row([
                 dbc.Col([
@@ -269,8 +264,8 @@ app.layout = html.Div(
                 html.Div(id='show',style={"text-align":"center","pading":"5px"}),
                 html.Div( [dcc.Graph(id="graph"),], className="col-10",style={'margin-left':"5vw"}),modal              
                 ],style={"margin": "0 5vh"}),
-        ],style={"marginLeft": "30vw" , "padding": "16vh 2rem 0 2rem","right": 0, "width" : "69vw" ,"height" : "100vh",}),
+        ],style={"left": "30%" , "padding": "5vh 2rem 0 2rem","right": 0, "width" : "69vw" ,"height" : "100vh","float":"right","height":"auto"}),
         
-    ],style={"background-color": "#ff9999",}
+    ],style={"background-color": "#ff9999","float":"right","height":"auto"}
 )
 

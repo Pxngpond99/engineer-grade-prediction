@@ -70,7 +70,7 @@ def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t
                 text = "OH NO, BE CAREFUL!"
                 show_img = [html.Img(src=fail[ran], alt='image',style={"display": "block","margin-left": "auto","margin-right": "auto","width":"33.5vw","height":"auto"}),html.Div(text),]
             else :
-                text_style = {"font-weight": "bold","color":"#00ff00","font-size": "2.5em"}
+                text_style = {"font-weight": "bold","color":"#228B22","font-size": "2.5em"}
                 text = "CONGRATULATIONS!"
                 show_img = [html.Img(src=past[ran], alt='image',style={"display": "block","margin-left": "auto","margin-right": "auto","width":"33.5vw","height":"auto"}),html.Div(text),]
     return html.Div(text,style=text_style),show_img
@@ -134,7 +134,7 @@ def update_output(n_clicks,gen,maj,dep,sch,ent,fun,fam,t11,t12,t21,t22,t31,t32,t
                 text_style = {"font-weight": "bold","color":"#ff0000","font-size": "1em"}
                 text = " คุณมีโอกาส"+"ตกออก "+per
             else :
-                text_style = {"font-weight": "bold","color":"#00ff00","font-size": "1em"}
+                text_style = {"font-weight": "bold","color":"#228B22","font-size": "1em"}
                 text = " คุณมีโอกาส"+"สำเร็จการศึกษา "+per
     return html.Div(text,style=text_style)
 
