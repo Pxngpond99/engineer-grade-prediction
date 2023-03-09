@@ -10,6 +10,19 @@ from dash import Input, Output, html
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, dbc.icons.FONT_AWESOME])
 
+modal = html.Div(
+    [
+        dbc.Modal(
+            [
+                html.Div(id="image-show",style={"background-image": "linear-gradient(to bottom right,#FF69B4, #DC143C,#FF4500)","font-weight": "500","color":"#FFFAF0"
+                                                              ,"font-size":"2rem","width":"33.5vw","text-aligh":"center"}),
+            ],
+            id="modal-centered",
+            centered=True,
+            is_open=False,style={"margin-left": "auto","margin-right": "auto","display": "block",}
+        ),
+    ],style={"width":"33.5vw"}
+)
 SIDEBAR_STYLE = {
     "position": "fixed",
     "top" : "8rem",
@@ -26,7 +39,7 @@ CONTENT_STYLE = {
     "padding": "2rem 0",
     "background-image": "linear-gradient(to bottom right,#FF69B4, #DC143C,#FF4500)",
     "width" : "100.7%",
-    "margin-right" : 0
+
 }
 cog = html.Div(className="fa-sharp fa-solid fa-gear",style={"margin": "0 5px"})
 
@@ -69,28 +82,22 @@ sidebar = html.Div(
                              },
                     className="col-sm")
         ,
-        html.P(children=[course,"Select Major"]
+        html.P(children=[graduate,"Select Department"]
             , className="lead",style={"font-weight": "500",}
         ),
         html.Div([
-                dbc.Select(
-                id="Major-dd",
-                options=[{"label": s, "value": s} for s in MAJOR_NAME_THAI], 
+                html.Div([
+                dcc.Dropdown([s for s in DEPT_NAME_THAI if s != ""], 'ภาควิชาวิศวกรรมไฟฟ้า', id='Department-dd'),], 
             ),
                     ],style={"top": "20px;",
                              "margin": "0 0 10px 0",
                              },
                     className="col-sm")
         ,    
-        html.P(children=[graduate,"Select Department"]
+                html.P(children=[course,"Select Major"]
             , className="lead",style={"font-weight": "500",}
         ),
-        html.Div([
-                dbc.Select(
-                id="Department-dd",
-                options=[{"label": s, "value": s} for s in DEPT_NAME_THAI], 
-            ),
-                    ],style={"top": "20px;",
+        html.Div([dcc.Dropdown( id="Major-dd"),],style={"top": "20px;",
                              "margin": "0 0 10px 0",
                              },
                     className="col-sm")
@@ -112,11 +119,11 @@ sidebar = html.Div(
         ),
         html.Div([
                 html.Div([
-                dcc.Dropdown([s for s in ENT_METHOD_DESC if s != ""], ' ', id='ent-dropdown'),
+                dcc.Dropdown([s for s in ENT_METHOD_DESC if s != ""], ' ', id='ent-dropdown',clearable=False,style={"text-overflow": "ellipsis"}),
                 
             ]),
                     ],style={"top": "20px;",
-                             "margin": "0 0 10px 0",
+                             "margin": "0 0 10px 0","text-overflow": "ellipsis"
                              },
                     className="col-sm")
                 ,    
@@ -151,11 +158,21 @@ sidebar = html.Div(
 
 content = html.Div(children=[
                 html.H1(
-                    children=["PREDICT RETIREMENT",cog],
+                    children=["PREDICT RETIREMENT",cog,],
                     style={
                         "textAlign": "center","color" : "#F0F8FF","font-size":"3rem" , "font-weight": "bold","margin-right" : 0
                     },
-                )
+                ),
+                html.Div(
+                    children=["Name",dcc.Input(id="input1", type="text", placeholder="NAME", debounce=True,
+                                        style={"margin":"0 0.5vw 0 1vw","width":"20vw","textAlign": "left","top":"5vh","float":"right"}),
+                    ],style={"font-weight": "500","top":"-4.5rem","position":"relative","float":"right","textAlign": "right","color":"#FFFFF0"}
+                ),
+                html.Div(
+                    children=["Student ID",dcc.Input(id="input2", type="text", placeholder="Student ID", debounce=True,
+                                        style={"margin":"0 0.5vw 0 1vw","width":"20vw","textAlign": "left","top":"5vh","float":"right"}),
+                    ],style={"font-weight": "500","top":"-3.5rem","position":"relative","float":"right","textAlign": "right","color":"#FFFFF0"}
+                ),
             ],
             className="row",id="page-content", style=CONTENT_STYLE)
 
@@ -242,9 +259,10 @@ app.layout = html.Div(
             dbc.Row([
                 html.Div(id='ent-output-container',style={"text-align":"center"}),
                 html.Div(id='show',style={"text-align":"center","pading":"5px"}),
-                html.Div( [dcc.Graph(id="graph"),], className="col-10",style={'margin-left':"5vw"}),              
+                html.Div( [dcc.Graph(id="graph"),], className="col-10",style={'margin-left':"5vw"}),modal              
                 ],style={"margin": "0 5vh"}),
         ],style={"marginLeft": "30vw" , "padding": "16vh 2rem 0 2rem","right": 0, "width" : "69vw" ,"height" : "100vh",}),
         
     ],style={"background-color": "#ff9999",}
 )
+
